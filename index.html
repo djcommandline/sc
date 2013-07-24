@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>FRONTEND CHALLENGE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- google fonts -->
+
+        <!-- webfonts -->
+        <script type="text/javascript" src="http://fast.fonts.net/jsapi/99e5693d-51d2-422b-a852-fccbfbf1a5af.js"></script>
+
+        <!-- generated-icon-fonts -->
+        <link rel="stylesheet" href="./assets/fontcustom/fontcustom.css" />
+
+        <!-- css -->
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        
+        <!-- js -->
+        <script src="./assets/js/modernizr.js"></script>
+
+        <!-- handlebar templates -->
+        <script id="standard-tbody-tpl" type="text/x-handlebars-template">
+            {{#each achievements}}
+                {{#compare type "==" "daily"}}
+                    {{> row}}
+                {{/compare}}
+            {{/each}}
+        </script>
+
+        <script id="daily-tbody-tpl" type="text/x-handlebars-template">
+            {{#each achievements}}
+                {{#compare type "==" "standard"}}
+                    {{> row}}
+                {{/compare}}
+            {{/each}}
+        </script>
+
+        
+        <script id="row-partial" type="text/x-handlebars-template">
+            <tr data-achievement-id="{{id}}">
+                <td class="title">{{title}}</td>
+                <td class="goal"><span class="value">{{properties.goalCount}}</span><span class="name">{{properties.goalName}}</span></td>
+                <td class="reward"><span class="value">{{properties.rewardCount}}</span><span class="name">{{properties.rewardName}}</span></td>
+                
+                {{#compare properties.active "==" true}}
+                    <td class="status active" data-active-state="active">
+                        <i class="icon-check"></i><span class="name">ACTIVE</span>
+                    </td>
+                {{/compare}}
+
+                {{#compare properties.active "==" false}}
+                    <td class="status paused" data-active-state="paused">
+                        <i class="icon-pause"></i><span class="name">PAUSED</span>
+                    </td>
+                {{/compare}}
+            </tr>
+        </script>
+
+    </head>    
+    <body>
+        <div id="wrap">
+            
+    
+            <div id="header">    
+                <div id="logox"></div>
+                <div class="nav">
+                    <ul>
+                        <li><span>Product Manager : </span></li>
+                        <li><a href="#achievements" class="active">Achievements</a></li>
+                        <li><a href="#promotions">Promotions</a></li>
+                        <li><a href="#tornamentes">Tournaments</a></li>
+                    </ul>
+                </div>
+            </div><!-- /#header -->
+            
+            
+            <div id="sub-header">
+                <div class="nav">
+                    <ul>
+                        <li><span><i class="drop-arrow"></i>Wordly : </span></li>
+                        <li><a href="#manager"><span>Manager</span></a></li>
+                        <li><a href="#launchpad" class="active"><span>Launchpad</span></a></li>
+                        <li><a href="#analytics"><span>Analytics</span></a></li>
+                    </ul>
+                </div>
+                <div class="server-status hide">
+                    <span data-success="Your changes have been updated" data-error="Unable to update message" data-cancel="Your changes have been canceled">message</span>
+                </div>
+            </div><!-- /#sub-header" -->
+
+
+
+            <div id="user-action">
+                <div>
+                    <button class="save disabled">Save</button>
+                    <button class="cancel disabled">Cancel</button>
+                </div>
+            </div><!-- /#user-action -->
+
+
+
+
+
+            <!-- daily acheivements -->
+            <div class="table-head-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col" class="achievement">Daily Achievements</th>
+                    <th scope="col" class="goal">Goal</th>
+                    <th scope="col" class="reward">Reward</th>
+                    <th scope="col" class="status">Status</th>
+                </tr>
+                </thead>
+            </table>
+            </div>
+            <div id="daily" class="table-body-wrap">
+                <table>
+                <tbody>
+                    <!-- #standard-tbody-tpl -->
+                </tbody>
+                </table>
+            </div>
+
+
+            <!-- standard achievements -->
+            <div class="table-head-wrap">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col" class="achievement">Achievements</th>
+                    <th scope="col" class="goal">Goal</th>
+                    <th scope="col" class="reward">Reward</th>
+                    <th scope="col" class="status">Status</th>
+                </tr>
+                </thead>
+            </table>
+            </div>
+            <div id="standard" class="table-body-wrap">
+                <table>
+                <tbody>
+                    <!-- #daily-tbody-tpl -->
+                </tbody>
+                </table>
+            </div>
+
+
+
+        </div><!-- #/wrap -->
+
+        <!-- end of page scripts -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="./assets/js/jquery.js"><\/script>')</script>
+
+        <script src="./assets/js/handlebars.js"></script>
+        <script src="./assets/js/app.js"></script>
+
+    </body>
+</html>

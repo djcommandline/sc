@@ -1,0 +1,30 @@
+/* 
+ * Font Custom: bare CSS
+ */
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("fontcustom_f5247dcbf7280b3cef055075a8b4939a.eot");
+  src: url("fontcustom_f5247dcbf7280b3cef055075a8b4939a.eot?#iefix") format("embedded-opentype"),
+       url("fontcustom_f5247dcbf7280b3cef055075a8b4939a.woff") format("woff"),
+       url("fontcustom_f5247dcbf7280b3cef055075a8b4939a.ttf") format("truetype"),
+       url("fontcustom_f5247dcbf7280b3cef055075a8b4939a.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-check:before,
+.icon-pause:before {
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.icon-check:before { content: "\f100"; }
+.icon-pause:before { content: "\f101"; }

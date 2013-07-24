@@ -1,0 +1,17 @@
+{
+  "fonts": [
+    "fontcustom_f5247dcbf7280b3cef055075a8b4939a.ttf",
+    "fontcustom_f5247dcbf7280b3cef055075a8b4939a.woff",
+    "fontcustom_f5247dcbf7280b3cef055075a8b4939a.eot",
+    "fontcustom_f5247dcbf7280b3cef055075a8b4939a.svg"
+  ],
+  "templates": [
+    "fontcustom.css",
+    "fontcustom-preview.html"
+  ],
+  "file_name": "fontcustom_f5247dcbf7280b3cef055075a8b4939a",
+  "glyphs": [
+    "check",
+    "pause"
+  ]
+}
